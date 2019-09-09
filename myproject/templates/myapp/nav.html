@@ -1,0 +1,13 @@
+{% load static %}
+
+<nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'profile' %}">{{ user.username }}!</a></li>
+          <li><a href="{% url 'logout' %}">logout</a><li>
+          {% else %}
+          <li><a href="{% url 'login' %}">login</a></li>
+          {% endif %}
+        </ul>
+      </nav><!-- .main-nav -->
+      
